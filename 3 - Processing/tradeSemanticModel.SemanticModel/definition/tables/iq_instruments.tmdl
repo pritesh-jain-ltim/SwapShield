@@ -1,0 +1,47 @@
+table iq_instruments
+	lineageTag: 1c4307eb-c917-49a9-98c4-ff0c945fb63d
+	sourceLineageTag: [dbo].[iq_instruments]
+
+	column underlying
+		dataType: string
+		lineageTag: 49025375-3d19-4a8c-9ed1-29c474d0a0de
+		sourceLineageTag: underlying
+		summarizeBy: none
+		sourceColumn: underlying
+
+		annotation SummarizationSetBy = Automatic
+
+	column isin
+		dataType: string
+		lineageTag: fc37f67c-28af-4903-a307-5f4c5faae208
+		sourceLineageTag: isin
+		summarizeBy: none
+		sourceColumn: isin
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector
+		dataType: string
+		lineageTag: 4ec9d1f5-290e-45ef-b1b2-13af937b8eab
+		sourceLineageTag: sector
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column instrument_id
+		dataType: string
+		lineageTag: 9f6fe51a-5f9e-45f0-8a2d-f465c3d5531d
+		sourceLineageTag: instrument_id
+		summarizeBy: none
+		sourceColumn: instrument_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iq_instruments = entity
+		mode: directLake
+		source
+			entityName: iq_instruments
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Pipeline2_Prepare IQ Data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1fcb169d-249c-a614-4cfc-8b5a4f766056"
+  }
+}

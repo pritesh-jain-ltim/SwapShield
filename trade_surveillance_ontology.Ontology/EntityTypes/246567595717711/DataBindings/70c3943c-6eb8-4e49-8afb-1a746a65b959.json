@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "70c3943c-6eb8-4e49-8afb-1a746a65b959",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "client_id",
+        "targetPropertyId": "8469003378144410706"
+      },
+      {
+        "sourceColumnName": "connected_client",
+        "targetPropertyId": "1115517300508773726"
+      },
+      {
+        "sourceColumnName": "relationship",
+        "targetPropertyId": "1115517300640959924"
+      },
+      {
+        "sourceColumnName": "trade_id",
+        "targetPropertyId": "1115517301894465729"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+      "itemId": "10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3",
+      "sourceTableName": "iq_clients",
+      "sourceSchema": "dbo"
+    }
+  }
+}

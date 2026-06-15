@@ -1,0 +1,11 @@
+expression 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/403ac573-7599-48cb-ac00-cddcaad06fa9/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 19b05dca-db94-459e-af99-9279dc60e838
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[clients_raw]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[trades_raw]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[events_raw]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[instruments_raw]"}},"objectType":"Table"}]
+

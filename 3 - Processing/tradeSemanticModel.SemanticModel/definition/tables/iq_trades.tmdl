@@ -1,0 +1,235 @@
+table iq_trades
+	lineageTag: 84288691-46cc-4fed-aaa1-0f1fe71235f3
+	sourceLineageTag: [dbo].[iq_trades]
+
+	measure 'Total Exposure' = SUM(iq_trades[notional1])
+		lineageTag: 4576ed8b-1048-4f56-b2c2-daa853482263
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trade_id
+		dataType: string
+		lineageTag: ebcd7205-ed31-4648-ac12-f68b04a43ca0
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: 1dfce023-2fa5-451e-a79f-6c7c326015e0
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column underlying
+		dataType: string
+		lineageTag: bfc026c8-4fd4-4da6-aa14-a151f8ca8e7e
+		sourceLineageTag: underlying
+		summarizeBy: none
+		sourceColumn: underlying
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 376ca39a-5fbc-4231-98da-ef10a8f68c8a
+		sourceLineageTag: trade_date
+		summarizeBy: none
+		sourceColumn: trade_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: 25eb505e-284d-4e66-995c-d02e58bf4159
+		sourceLineageTag: direction
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column notional
+		dataType: double
+		lineageTag: 137c5e38-f5ce-43c4-9636-faa437dd5363
+		sourceLineageTag: notional
+		summarizeBy: sum
+		sourceColumn: notional
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column notional_vs_avg
+		dataType: double
+		lineageTag: 3da5c268-e522-4fa7-a961-ff10c4592835
+		sourceLineageTag: notional_vs_avg
+		summarizeBy: sum
+		sourceColumn: notional_vs_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column new_exposure_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: a1ae07ea-5d5f-4fef-9f4f-d2d3cbd96fb5
+		sourceLineageTag: new_exposure_flag
+		summarizeBy: sum
+		sourceColumn: new_exposure_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column large_trade_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: 84914a46-4371-43e7-b673-7e01ca235d30
+		sourceLineageTag: large_trade_flag
+		summarizeBy: sum
+		sourceColumn: large_trade_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column rolling_frequency
+		dataType: int64
+		formatString: 0
+		lineageTag: f71a625a-c0e8-43f1-8650-40b4bfbea6d8
+		sourceLineageTag: rolling_frequency
+		summarizeBy: sum
+		sourceColumn: rolling_frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_insider
+		dataType: int64
+		formatString: 0
+		lineageTag: 882724ae-59ee-4899-9407-8e471aa4e8c3
+		sourceLineageTag: is_insider
+		summarizeBy: sum
+		sourceColumn: is_insider
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_next_event
+		dataType: int64
+		formatString: 0
+		lineageTag: ea9f5169-2c8e-4d88-96e8-4dfbf79d43d0
+		sourceLineageTag: days_to_next_event
+		summarizeBy: sum
+		sourceColumn: days_to_next_event
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_7d
+		dataType: int64
+		formatString: 0
+		lineageTag: 83278cd7-5dcf-4b5e-80fa-f33aac33d134
+		sourceLineageTag: event_within_7d
+		summarizeBy: sum
+		sourceColumn: event_within_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_3d
+		dataType: int64
+		formatString: 0
+		lineageTag: 586323d8-80bb-4284-85d0-6c10e57ca740
+		sourceLineageTag: event_within_3d
+		summarizeBy: sum
+		sourceColumn: event_within_3d
+
+		annotation SummarizationSetBy = Automatic
+
+	column jurisdiction_risk
+		dataType: string
+		lineageTag: cc6c012b-f810-44cd-a937-516ce0bb7a99
+		sourceLineageTag: jurisdiction_risk
+		summarizeBy: none
+		sourceColumn: jurisdiction_risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column jurisdiction_risk_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 45754cb7-981c-4998-adc3-530c68eb2cb9
+		sourceLineageTag: jurisdiction_risk_score
+		summarizeBy: sum
+		sourceColumn: jurisdiction_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_rating
+		dataType: string
+		lineageTag: d8ab4bae-437d-4ec3-bee7-c0de1f93376e
+		sourceLineageTag: risk_rating
+		summarizeBy: none
+		sourceColumn: risk_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column kyc_risk_score
+		dataType: int64
+		formatString: 0
+		lineageTag: a67cf373-7492-4ee0-a9c4-70d667044105
+		sourceLineageTag: kyc_risk_score
+		summarizeBy: sum
+		sourceColumn: kyc_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column notional_ge_1bn
+		dataType: int64
+		formatString: 0
+		lineageTag: aec4da79-a67f-45db-8f33-c3f81d37eea9
+		sourceLineageTag: notional_ge_1bn
+		summarizeBy: sum
+		sourceColumn: notional_ge_1bn
+
+		annotation SummarizationSetBy = Automatic
+
+	column notional_ge_500m
+		dataType: int64
+		formatString: 0
+		lineageTag: 60254203-6658-470c-9d3c-fa3613e92a46
+		sourceLineageTag: notional_ge_500m
+		summarizeBy: sum
+		sourceColumn: notional_ge_500m
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b273ba2-8723-409c-93c0-0579bdc96d1c
+		sourceLineageTag: anomaly_score
+		summarizeBy: sum
+		sourceColumn: anomaly_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column notional1
+		dataType: double
+		lineageTag: dbc487e0-7d7b-43b5-802b-9f3fa95449b2
+		sourceLineageTag: notional1
+		summarizeBy: sum
+		sourceColumn: notional1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition iq_trades = entity
+		mode: directLake
+		source
+			entityName: iq_trades
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

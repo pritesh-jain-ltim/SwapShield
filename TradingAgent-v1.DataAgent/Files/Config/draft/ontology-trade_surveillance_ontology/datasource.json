@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "88a6f367-3a5f-a945-41dd-a4f226019883",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "trade_surveillance_ontology",
+  "type": "ontology",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "Client",
+      "is_selected": true,
+      "display_name": "Client",
+      "type": "ontology.entity",
+      "description": "client_id,connected_client,relationship,trade_id",
+      "children": []
+    },
+    {
+      "id": "Trade",
+      "is_selected": true,
+      "display_name": "Trade",
+      "type": "ontology.entity",
+      "description": "anomaly_score,client_id,days_to_next_event,direction,event_within_3d,event_within_7d,is_insider,jurisdiction_risk,jurisdiction_risk_score,kyc_risk_score,large_trade_flag,new_exposure_flag,notional,notional_ge_1bn,notional_ge_500m,notional_vs_avg,notional1,risk_rating,rolling_frequency,trade_date,trade_id,underlying",
+      "children": []
+    },
+    {
+      "id": "Instrument",
+      "is_selected": true,
+      "display_name": "Instrument",
+      "type": "ontology.entity",
+      "description": "instrument_id,isin,sector,underlying",
+      "children": []
+    },
+    {
+      "id": "Event",
+      "is_selected": true,
+      "display_name": "Event",
+      "type": "ontology.entity",
+      "description": "days_to_next_event,event_date,event_id,event_type,event_within_3d,event_within_7d,has_earnings_event,has_high_importance_event,trade_id,underlying",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "7863749679922743912",
+  "name": "HAS_EVENT",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "27993266252015"
+  },
+  "target": {
+    "entityTypeId": "12782561686946"
+  }
+}

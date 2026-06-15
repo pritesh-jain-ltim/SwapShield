@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "a1e85bae-8ced-4357-849a-433b240625fd",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "anomaly_score",
+        "targetPropertyId": "8479186181254026417"
+      },
+      {
+        "sourceColumnName": "client_id",
+        "targetPropertyId": "8479186181327886155"
+      },
+      {
+        "sourceColumnName": "days_to_next_event",
+        "targetPropertyId": "8479186184231163093"
+      },
+      {
+        "sourceColumnName": "direction",
+        "targetPropertyId": "8479186181841772695"
+      },
+      {
+        "sourceColumnName": "event_within_3d",
+        "targetPropertyId": "8479186181568387517"
+      },
+      {
+        "sourceColumnName": "event_within_7d",
+        "targetPropertyId": "8479186180867555406"
+      },
+      {
+        "sourceColumnName": "is_insider",
+        "targetPropertyId": "8479186184022819302"
+      },
+      {
+        "sourceColumnName": "jurisdiction_risk",
+        "targetPropertyId": "8479186182081941541"
+      },
+      {
+        "sourceColumnName": "jurisdiction_risk_score",
+        "targetPropertyId": "8479186183953001111"
+      },
+      {
+        "sourceColumnName": "kyc_risk_score",
+        "targetPropertyId": "8479186183862740644"
+      },
+      {
+        "sourceColumnName": "large_trade_flag",
+        "targetPropertyId": "8479186182791185978"
+      },
+      {
+        "sourceColumnName": "new_exposure_flag",
+        "targetPropertyId": "8479186182660494277"
+      },
+      {
+        "sourceColumnName": "notional",
+        "targetPropertyId": "8479186182630500143"
+      },
+      {
+        "sourceColumnName": "notional_ge_1bn",
+        "targetPropertyId": "8479186182910334778"
+      },
+      {
+        "sourceColumnName": "notional_ge_500m",
+        "targetPropertyId": "8479186181097275448"
+      },
+      {
+        "sourceColumnName": "notional_vs_avg",
+        "targetPropertyId": "8479186181691650952"
+      },
+      {
+        "sourceColumnName": "notional1",
+        "targetPropertyId": "1111343340793521718"
+      },
+      {
+        "sourceColumnName": "risk_rating",
+        "targetPropertyId": "8479186182699250527"
+      },
+      {
+        "sourceColumnName": "rolling_frequency",
+        "targetPropertyId": "8479186184472663164"
+      },
+      {
+        "sourceColumnName": "trade_date",
+        "targetPropertyId": "8479186183618913605"
+      },
+      {
+        "sourceColumnName": "trade_id",
+        "targetPropertyId": "8479186183295193546"
+      },
+      {
+        "sourceColumnName": "underlying",
+        "targetPropertyId": "8479186182545797821"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+      "itemId": "10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3",
+      "sourceTableName": "iq_trades",
+      "sourceSchema": "dbo"
+    }
+  }
+}

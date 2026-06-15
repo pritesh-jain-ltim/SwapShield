@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "GraphModel",
+    "displayName": "IQ_Ontology_graph"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "324762ac-05c0-a08d-4e1b-76f50f799719"
+  }
+}

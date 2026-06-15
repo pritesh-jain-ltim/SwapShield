@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "dd87158b-044c-4c92-a347-2611158cbbc8",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "days_to_next_event",
+        "targetPropertyId": "8487306602208148715"
+      },
+      {
+        "sourceColumnName": "event_date",
+        "targetPropertyId": "8487306604656863917"
+      },
+      {
+        "sourceColumnName": "event_id",
+        "targetPropertyId": "8487306606017771731"
+      },
+      {
+        "sourceColumnName": "event_type",
+        "targetPropertyId": "8487306604651150134"
+      },
+      {
+        "sourceColumnName": "event_within_3d",
+        "targetPropertyId": "8487306603489681635"
+      },
+      {
+        "sourceColumnName": "event_within_7d",
+        "targetPropertyId": "8487306602615048475"
+      },
+      {
+        "sourceColumnName": "has_earnings_event",
+        "targetPropertyId": "8487306603039818012"
+      },
+      {
+        "sourceColumnName": "has_high_importance_event",
+        "targetPropertyId": "8487306605058011349"
+      },
+      {
+        "sourceColumnName": "trade_id",
+        "targetPropertyId": "8487306604021669871"
+      },
+      {
+        "sourceColumnName": "underlying",
+        "targetPropertyId": "8487306605898451875"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+      "itemId": "10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3",
+      "sourceTableName": "iq_events",
+      "sourceSchema": "dbo"
+    }
+  }
+}

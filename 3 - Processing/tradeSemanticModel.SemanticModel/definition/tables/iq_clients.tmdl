@@ -1,0 +1,47 @@
+table iq_clients
+	lineageTag: 56d61823-0933-4542-8799-d891a2b129d3
+	sourceLineageTag: [dbo].[iq_clients]
+
+	column client_id
+		dataType: string
+		lineageTag: fe0125d4-eb3a-4aff-b23f-9ba2af64bc0a
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column connected_client
+		dataType: string
+		lineageTag: 51eea652-acbc-429a-8410-168c7be0fc77
+		sourceLineageTag: connected_client
+		summarizeBy: none
+		sourceColumn: connected_client
+
+		annotation SummarizationSetBy = Automatic
+
+	column relationship
+		dataType: string
+		lineageTag: 23ec9f91-e11b-4189-8c84-9938c157cf00
+		sourceLineageTag: relationship
+		summarizeBy: none
+		sourceColumn: relationship
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_id
+		dataType: string
+		lineageTag: dc9d13bf-e2da-4287-941c-5a6b8533e976
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iq_clients = entity
+		mode: directLake
+		source
+			entityName: iq_clients
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

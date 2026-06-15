@@ -1,0 +1,43 @@
+[
+  {
+    "uniqueIdentifier": "bf5fc3fa-39bb-44f9-a223-68ff85ebb054",
+    "payload": {
+      "name": "RealTimeHub",
+      "connection": {
+        "scope": "Artifact",
+        "tenantId": "3670e846-58dd-4658-86fb-00e4029045d6",
+        "workspaceId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+        "artifactId": "10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3",
+        "eventGroupType": "Microsoft.Fabric.OneLakeEvents"
+      },
+      "filterSettings": {
+        "eventTypes": [
+          {
+            "name": "Microsoft.Fabric.OneLake.FileCreated"
+          }
+        ],
+        "filters": [
+          {
+            "values": [
+              "/Files/trade_surveillance/landing/trades"
+            ],
+            "operatorType": "StringBeginsWith",
+            "key": "subject"
+          }
+        ]
+      }
+    },
+    "type": "realTimeHubSource-v1"
+  },
+  {
+    "uniqueIdentifier": "be53c51f-164b-456c-af3c-4e491ea494a2",
+    "payload": {
+      "name": "OneLakeEvents event",
+      "definition": {
+        "type": "Event",
+        "instance": "{\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"SourceEventStep\",\"id\":\"cf7fbcf4-3c20-4d51-bd67-62da01e09782\",\"rows\":[{\"name\":\"SourceSelector\",\"kind\":\"SourceReference\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"bf5fc3fa-39bb-44f9-a223-68ff85ebb054\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

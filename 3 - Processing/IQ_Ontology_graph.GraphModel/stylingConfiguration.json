@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphInstance/definition/stylingConfiguration/1.0.0/schema.json",
+  "modelLayout": {
+    "positions": {
+      "eee5c565-6ef7-475d-aeaa-b3e47f765753": {
+        "x": -139.20526,
+        "y": -27.760216
+      },
+      "3cca1c71-5833-4225-a6e5-88701668b87a": {
+        "x": -34.986935,
+        "y": -55.591507
+      },
+      "3f9750af-d454-4acc-8237-fac60c8d5488": {
+        "x": 425.68268,
+        "y": -35.460796
+      },
+      "602076b0-0f30-466b-a594-bfd8d22bbc07": {
+        "x": 152.81337,
+        "y": -27.528381
+      }
+    },
+    "styles": {},
+    "pan": {
+      "x": 701.5102,
+      "y": 368.28052
+    },
+    "zoomLevel": 3.6839426
+  },
+  "visualFormat": {},
+  "scenario": "GraphClient"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphInstance/definition/dataSources/1.0.0/schema.json",
+  "dataSources": [
+    {
+      "name": "iq_trades",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/iq_trades"
+      }
+    },
+    {
+      "name": "iq_events",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/iq_events"
+      }
+    },
+    {
+      "name": "iq_clients",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/iq_clients"
+      }
+    },
+    {
+      "name": "iq_instruments",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/iq_instruments"
+      }
+    },
+    {
+      "name": "relationships_raw",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/relationships_raw"
+      }
+    },
+    {
+      "name": "events_raw",
+      "type": "DeltaTable",
+      "properties": {
+        "path": "abfss://403ac573-7599-48cb-ac00-cddcaad06fa9@onelake.dfs.fabric.microsoft.com/10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3/Tables/dbo/events_raw"
+      }
+    }
+  ]
+}

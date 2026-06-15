@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "36cd20f923320e3140c3",
+  "position": {
+    "x": 787.27272727272725,
+    "y": 57.272727272727266,
+    "z": 3,
+    "height": 217.27272727272725,
+    "width": 365.45454545454544,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "feature_client_hop1"
+                    }
+                  },
+                  "Property": "Cluster Flag"
+                }
+              },
+              "queryRef": "feature_client_hop1.Cluster Flag",
+              "nativeQueryRef": "Cluster Flag"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

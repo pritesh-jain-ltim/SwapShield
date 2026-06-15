@@ -1,0 +1,68 @@
+table trade_scores_from_feature_store
+	lineageTag: db8dc5fc-852a-4405-837a-f73164623078
+	sourceLineageTag: [dbo].[trade_scores_from_feature_store]
+
+	column trade_id
+		dataType: string
+		lineageTag: cacb35a0-20da-476c-af2b-ad2eb59530c2
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: fa1814ea-8df4-4983-840e-30a9b9a836cd
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_flag
+		dataType: string
+		lineageTag: afa4cca6-31d6-454b-b52f-b35d14b4184c
+		sourceLineageTag: risk_flag
+		summarizeBy: none
+		sourceColumn: risk_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column underlying
+		dataType: string
+		lineageTag: 7dd74be4-c4c6-4e86-8bcc-69485c5b20a9
+		sourceLineageTag: underlying
+		summarizeBy: none
+		sourceColumn: underlying
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_label
+		dataType: int64
+		formatString: 0
+		lineageTag: cdfb865f-b016-4aef-8a87-6919feb2d411
+		sourceLineageTag: predicted_label
+		summarizeBy: sum
+		sourceColumn: predicted_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_probability
+		dataType: double
+		lineageTag: 499cca84-ec65-40c1-b48c-7cc04a716a65
+		sourceLineageTag: predicted_probability
+		summarizeBy: sum
+		sourceColumn: predicted_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition trade_scores_from_feature_store = entity
+		mode: directLake
+		source
+			entityName: trade_scores_from_feature_store
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

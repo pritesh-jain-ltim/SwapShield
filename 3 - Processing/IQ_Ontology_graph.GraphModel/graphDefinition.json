@@ -1,0 +1,350 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphInstance/definition/graphDefinition/1.0.0/schema.json",
+  "nodeTables": [
+    {
+      "nodeTypeAlias": "3cca1c71-5833-4225-a6e5-88701668b87a",
+      "id": "67780617-827c-4cbe-ad18-ffc493a820c4",
+      "dataSourceName": "iq_trades",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "trade_id"
+        },
+        {
+          "propertyName": "anomalyScore",
+          "sourceColumn": "anomaly_score"
+        },
+        {
+          "propertyName": "clientId",
+          "sourceColumn": "client_id"
+        },
+        {
+          "propertyName": "daysToNextEvent",
+          "sourceColumn": "days_to_next_event"
+        },
+        {
+          "propertyName": "direction",
+          "sourceColumn": "direction"
+        },
+        {
+          "propertyName": "eventWithin3d",
+          "sourceColumn": "event_within_3d"
+        },
+        {
+          "propertyName": "eventWithin7d",
+          "sourceColumn": "event_within_7d"
+        },
+        {
+          "propertyName": "isInsider",
+          "sourceColumn": "is_insider"
+        },
+        {
+          "propertyName": "jurisdictionRisk",
+          "sourceColumn": "jurisdiction_risk"
+        },
+        {
+          "propertyName": "jurisdictionRiskScore",
+          "sourceColumn": "jurisdiction_risk_score"
+        },
+        {
+          "propertyName": "kycRiskScore",
+          "sourceColumn": "kyc_risk_score"
+        },
+        {
+          "propertyName": "largeTradeFlag",
+          "sourceColumn": "large_trade_flag"
+        },
+        {
+          "propertyName": "newExposureFlag",
+          "sourceColumn": "new_exposure_flag"
+        },
+        {
+          "propertyName": "notional",
+          "sourceColumn": "notional"
+        },
+        {
+          "propertyName": "notionalGe1bn",
+          "sourceColumn": "notional_ge_1bn"
+        },
+        {
+          "propertyName": "notionalGe500m",
+          "sourceColumn": "notional_ge_500m"
+        },
+        {
+          "propertyName": "notionalVsAvg",
+          "sourceColumn": "notional_vs_avg"
+        },
+        {
+          "propertyName": "notional1",
+          "sourceColumn": "notional1"
+        },
+        {
+          "propertyName": "riskRating",
+          "sourceColumn": "risk_rating"
+        },
+        {
+          "propertyName": "rollingFrequency",
+          "sourceColumn": "rolling_frequency"
+        },
+        {
+          "propertyName": "tradeDate",
+          "sourceColumn": "trade_date"
+        },
+        {
+          "propertyName": "underlying",
+          "sourceColumn": "underlying"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "eee5c565-6ef7-475d-aeaa-b3e47f765753",
+      "id": "ef375f03-79ce-4c96-8efd-ffd6eb67c7b6",
+      "dataSourceName": "iq_clients",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "client_id"
+        },
+        {
+          "propertyName": "connectedClient",
+          "sourceColumn": "connected_client"
+        },
+        {
+          "propertyName": "relationship",
+          "sourceColumn": "relationship"
+        },
+        {
+          "propertyName": "tradeId",
+          "sourceColumn": "trade_id"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "3f9750af-d454-4acc-8237-fac60c8d5488",
+      "id": "ba1b298f-66c6-4167-8acf-8be10a3f8b6b",
+      "dataSourceName": "iq_instruments",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "underlying"
+        },
+        {
+          "propertyName": "instrumentId",
+          "sourceColumn": "instrument_id"
+        },
+        {
+          "propertyName": "isin",
+          "sourceColumn": "isin"
+        },
+        {
+          "propertyName": "sector",
+          "sourceColumn": "sector"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "602076b0-0f30-466b-a594-bfd8d22bbc07",
+      "id": "ea0cf2d5-4b8c-49d8-9b4c-75142e3e8fc8",
+      "dataSourceName": "events_raw",
+      "propertyMappings": [
+        {
+          "propertyName": "eventId",
+          "sourceColumn": "event_id"
+        },
+        {
+          "propertyName": "eventDate",
+          "sourceColumn": "event_date"
+        },
+        {
+          "propertyName": "eventType",
+          "sourceColumn": "event_type"
+        },
+        {
+          "propertyName": "importance",
+          "sourceColumn": "importance"
+        },
+        {
+          "propertyName": "underlying",
+          "sourceColumn": "underlying"
+        }
+      ]
+    }
+  ],
+  "edgeTables": [
+    {
+      "edgeTypeAlias": "8fbee65d-62dc-47fe-9901-4f3f3c5f52f0",
+      "id": "197b0d45-3894-4509-8f41-e2f87ea41e29",
+      "edgeIdMapping": null,
+      "dataSourceName": "iq_clients",
+      "sourceNodeKeyColumns": [
+        "client_id"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "client_id"
+        },
+        {
+          "propertyName": "connectedClient",
+          "sourceColumn": "connected_client"
+        },
+        {
+          "propertyName": "relationship",
+          "sourceColumn": "relationship"
+        },
+        {
+          "propertyName": "tradeId",
+          "sourceColumn": "trade_id"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "client_id"
+      ]
+    },
+    {
+      "edgeTypeAlias": "35bab525-f68e-4eac-a88f-42ff4dbb176d",
+      "id": "c9ee6302-1118-480c-8871-67a368dea8d7",
+      "edgeIdMapping": null,
+      "dataSourceName": "iq_clients",
+      "sourceNodeKeyColumns": [
+        "client_id"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "client_id"
+        },
+        {
+          "propertyName": "connectedClient",
+          "sourceColumn": "connected_client"
+        },
+        {
+          "propertyName": "relationship",
+          "sourceColumn": "relationship"
+        },
+        {
+          "propertyName": "tradeId",
+          "sourceColumn": "trade_id"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "trade_id"
+      ]
+    },
+    {
+      "edgeTypeAlias": "27b82625-237a-483b-b6bc-66a3843bf2d0",
+      "id": "93a34da5-5aa8-44f0-8070-ea51e4721e67",
+      "edgeIdMapping": null,
+      "dataSourceName": "iq_trades",
+      "sourceNodeKeyColumns": [
+        "trade_id"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "anomalyScore",
+          "sourceColumn": "anomaly_score"
+        },
+        {
+          "propertyName": "clientId",
+          "sourceColumn": "client_id"
+        },
+        {
+          "propertyName": "daysToNextEvent",
+          "sourceColumn": "days_to_next_event"
+        },
+        {
+          "propertyName": "direction",
+          "sourceColumn": "direction"
+        },
+        {
+          "propertyName": "eventWithin3d",
+          "sourceColumn": "event_within_3d"
+        },
+        {
+          "propertyName": "eventWithin7d",
+          "sourceColumn": "event_within_7d"
+        },
+        {
+          "propertyName": "isInsider",
+          "sourceColumn": "is_insider"
+        },
+        {
+          "propertyName": "jurisdictionRisk",
+          "sourceColumn": "jurisdiction_risk"
+        },
+        {
+          "propertyName": "jurisdictionRiskScore",
+          "sourceColumn": "jurisdiction_risk_score"
+        },
+        {
+          "propertyName": "kycRiskScore",
+          "sourceColumn": "kyc_risk_score"
+        },
+        {
+          "propertyName": "largeTradeFlag",
+          "sourceColumn": "large_trade_flag"
+        },
+        {
+          "propertyName": "newExposureFlag",
+          "sourceColumn": "new_exposure_flag"
+        },
+        {
+          "propertyName": "notional",
+          "sourceColumn": "notional"
+        },
+        {
+          "propertyName": "notionalGe1bn",
+          "sourceColumn": "notional_ge_1bn"
+        },
+        {
+          "propertyName": "notionalGe500m",
+          "sourceColumn": "notional_ge_500m"
+        },
+        {
+          "propertyName": "notionalVsAvg",
+          "sourceColumn": "notional_vs_avg"
+        },
+        {
+          "propertyName": "notional1",
+          "sourceColumn": "notional1"
+        },
+        {
+          "propertyName": "riskRating",
+          "sourceColumn": "risk_rating"
+        },
+        {
+          "propertyName": "rollingFrequency",
+          "sourceColumn": "rolling_frequency"
+        },
+        {
+          "propertyName": "tradeDate",
+          "sourceColumn": "trade_date"
+        },
+        {
+          "propertyName": "id",
+          "sourceColumn": "trade_id"
+        },
+        {
+          "propertyName": "underlying",
+          "sourceColumn": "underlying"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "underlying"
+      ]
+    },
+    {
+      "edgeTypeAlias": "5d6be742-df01-4194-ac5c-ef42a7479f8f",
+      "id": "0a819534-bc02-4fce-9ea2-d7c85d0a4dda",
+      "edgeIdMapping": null,
+      "dataSourceName": "events_raw",
+      "sourceNodeKeyColumns": [
+        "underlying"
+      ],
+      "propertyMappings": [],
+      "destinationNodeKeyColumns": [
+        "underlying"
+      ]
+    }
+  ]
+}

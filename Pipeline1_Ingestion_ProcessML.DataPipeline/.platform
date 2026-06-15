@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Pipeline1_Ingestion_ProcessML",
+    "description": "This pipeline ingest raw data, creates feature tables, apply ML and creates its tables"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1e997aaa-0629-92b5-4903-875d8e5e6344"
+  }
+}

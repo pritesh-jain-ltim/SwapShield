@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "2-Notebook_TrainModelFromFeatureStore",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d84a89c8-0c29-b06a-4960-a4bca5708419"
+  }
+}

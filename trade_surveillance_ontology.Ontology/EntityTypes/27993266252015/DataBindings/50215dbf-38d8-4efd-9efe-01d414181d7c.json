@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "50215dbf-38d8-4efd-9efe-01d414181d7c",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "instrument_id",
+        "targetPropertyId": "8484504894618247857"
+      },
+      {
+        "sourceColumnName": "isin",
+        "targetPropertyId": "8484504891950043545"
+      },
+      {
+        "sourceColumnName": "sector",
+        "targetPropertyId": "8484504895354145524"
+      },
+      {
+        "sourceColumnName": "underlying",
+        "targetPropertyId": "8484504892406900013"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+      "itemId": "10d8e90a-037d-44ab-b9d2-dff3d5c3b7e3",
+      "sourceTableName": "iq_instruments",
+      "sourceSchema": "dbo"
+    }
+  }
+}

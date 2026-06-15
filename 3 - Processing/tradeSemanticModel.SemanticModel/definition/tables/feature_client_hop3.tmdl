@@ -1,0 +1,50 @@
+table feature_client_hop3
+	lineageTag: efa1f268-cb4a-47a4-b92a-5e0bb64dd018
+	sourceLineageTag: [dbo].[feature_client_hop3]
+
+	column client_id
+		dataType: string
+		lineageTag: 0c588688-1d5e-4019-ae7a-16022fcf8512
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column hop3_path_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 71ea50f1-a025-4b42-b735-e71fdfa183cf
+		sourceLineageTag: hop3_path_count
+		summarizeBy: sum
+		sourceColumn: hop3_path_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column three_hop_loop_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 24eaa049-7ec7-4cab-936f-e967105b1d35
+		sourceLineageTag: three_hop_loop_count
+		summarizeBy: sum
+		sourceColumn: three_hop_loop_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_three_hop_loop
+		dataType: int64
+		formatString: 0
+		lineageTag: 340930d6-094e-4c93-9849-999be503eebf
+		sourceLineageTag: in_three_hop_loop
+		summarizeBy: sum
+		sourceColumn: in_three_hop_loop
+
+		annotation SummarizationSetBy = Automatic
+
+	partition feature_client_hop3 = entity
+		mode: directLake
+		source
+			entityName: feature_client_hop3
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

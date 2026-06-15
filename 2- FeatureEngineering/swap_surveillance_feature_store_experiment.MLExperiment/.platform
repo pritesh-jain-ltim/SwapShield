@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLExperiment",
+    "displayName": "swap_surveillance_feature_store_experiment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9540bfff-ddcf-9f65-43cd-7664276d7996"
+  }
+}

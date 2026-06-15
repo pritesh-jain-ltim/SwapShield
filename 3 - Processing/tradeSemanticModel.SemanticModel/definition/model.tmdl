@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","RemoteModeling"]
+
+ref table feature_store_trade_ml_csv_pipeline
+ref table trade_scores_from_csv_landing
+ref table feature_trade_base
+ref table feature_client_hop1
+ref table feature_client_hop3
+ref table feature_event_proximity
+ref table feature_store_trade_ml
+ref table trade_scores_from_feature_store
+ref table iq_agent_input
+ref table iq_trades
+ref table iq_events
+ref table iq_clients
+ref table iq_instruments
+ref table relationships_raw
+

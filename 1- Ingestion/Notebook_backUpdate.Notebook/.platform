@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Notebook_backUpdate"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2237d01e-e7d0-b1d4-473d-d70b0362ab29"
+  }
+}

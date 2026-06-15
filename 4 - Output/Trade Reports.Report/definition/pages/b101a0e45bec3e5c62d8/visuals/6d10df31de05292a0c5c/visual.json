@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6d10df31de05292a0c5c",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "ForceGraph1449359463895",
+    "query": {
+      "queryState": {
+        "Source": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "iq_clients"
+                    }
+                  },
+                  "Property": "client_id"
+                }
+              },
+              "queryRef": "iq_clients.client_id",
+              "nativeQueryRef": "client_id",
+              "active": true
+            }
+          ]
+        },
+        "Target": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "iq_clients"
+                    }
+                  },
+                  "Property": "connected_client"
+                }
+              },
+              "queryRef": "iq_clients.connected_client",
+              "nativeQueryRef": "connected_client",
+              "active": true
+            }
+          ]
+        },
+        "LinkType": {
+          "projections": []
+        },
+        "Weight": {
+          "projections": []
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

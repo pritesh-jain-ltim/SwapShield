@@ -1,0 +1,38 @@
+table relationships_raw
+	lineageTag: 7b134bdc-d7e4-45a2-b835-8269b1ab2bca
+	sourceLineageTag: [dbo].[relationships_raw]
+
+	column from_client
+		dataType: string
+		lineageTag: ca1923fa-1c9d-41a9-a8a5-4492370af247
+		sourceLineageTag: from_client
+		summarizeBy: none
+		sourceColumn: from_client
+
+		annotation SummarizationSetBy = Automatic
+
+	column to_client
+		dataType: string
+		lineageTag: dea886d4-741d-4ba1-83f4-adff492426a1
+		sourceLineageTag: to_client
+		summarizeBy: none
+		sourceColumn: to_client
+
+		annotation SummarizationSetBy = Automatic
+
+	column relationship
+		dataType: string
+		lineageTag: c4dd9577-fe3b-4774-866d-e371bd7b020b
+		sourceLineageTag: relationship
+		summarizeBy: none
+		sourceColumn: relationship
+
+		annotation SummarizationSetBy = Automatic
+
+	partition relationships_raw = entity
+		mode: directLake
+		source
+			entityName: relationships_raw
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

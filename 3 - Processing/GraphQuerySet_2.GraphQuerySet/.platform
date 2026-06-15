@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "GraphQuerySet",
+    "displayName": "GraphQuerySet_2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "93f56f13-e82d-ba23-4d99-562bb3c278e4"
+  }
+}

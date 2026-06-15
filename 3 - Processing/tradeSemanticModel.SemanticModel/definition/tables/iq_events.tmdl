@@ -1,0 +1,107 @@
+table iq_events
+	lineageTag: f20894f9-fcfb-4cc3-a0b3-1ab1be933e1b
+	sourceLineageTag: [dbo].[iq_events]
+
+	column trade_id
+		dataType: string
+		lineageTag: 44b23fc0-0478-4dfd-bcc2-043c4dbc0f07
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_id
+		dataType: string
+		lineageTag: 4291ce91-752e-40f8-910d-54d8a48eba87
+		sourceLineageTag: event_id
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column underlying
+		dataType: string
+		lineageTag: 03ece3e9-293b-4db7-a5ab-a580b1945095
+		sourceLineageTag: underlying
+		summarizeBy: none
+		sourceColumn: underlying
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_type
+		dataType: string
+		lineageTag: c067a465-a88a-441b-9224-185698bbbc71
+		sourceLineageTag: event_type
+		summarizeBy: none
+		sourceColumn: event_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7beee02f-5fb1-41be-a61e-ca98713a1544
+		sourceLineageTag: event_date
+		summarizeBy: none
+		sourceColumn: event_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_next_event
+		dataType: int64
+		formatString: 0
+		lineageTag: d324e9b8-c911-4029-858f-7a08e4b92ecd
+		sourceLineageTag: days_to_next_event
+		summarizeBy: sum
+		sourceColumn: days_to_next_event
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_7d
+		dataType: int64
+		formatString: 0
+		lineageTag: 3058888a-562f-44c7-b99e-ac7e8867ffe5
+		sourceLineageTag: event_within_7d
+		summarizeBy: sum
+		sourceColumn: event_within_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_3d
+		dataType: int64
+		formatString: 0
+		lineageTag: e1881d1b-606f-4d68-bfbe-3e4daf9d9adb
+		sourceLineageTag: event_within_3d
+		summarizeBy: sum
+		sourceColumn: event_within_3d
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_high_importance_event
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e160116-1e56-4e89-b80b-c81f733089d3
+		sourceLineageTag: has_high_importance_event
+		summarizeBy: sum
+		sourceColumn: has_high_importance_event
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_earnings_event
+		dataType: int64
+		formatString: 0
+		lineageTag: 51b3024a-8940-4bab-902d-781a23a1c929
+		sourceLineageTag: has_earnings_event
+		summarizeBy: sum
+		sourceColumn: has_earnings_event
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iq_events = entity
+		mode: directLake
+		source
+			entityName: iq_events
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

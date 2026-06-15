@@ -1,0 +1,148 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b12d6c31-3f53-92de-4ad2-ffc2eba68a82",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notebook-IQ1",
+        "description": "poulates iq_agent_input",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "c90d19ce-cb27-a809-460e-0834ff5571cf",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notebook-IQ2",
+        "description": "populates iq_trades and other iq tables",
+        "dependsOn": [
+          {
+            "activity": "Notebook-IQ1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshSqlEndpoint",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "sqlEndpointId": "a9bfa83d-d87d-4f5c-acf9-be5b120f319d",
+          "recreateTables": false
+        },
+        "externalReferences": {
+          "connection": "d6705984-32e6-4224-afd1-064e1b267223"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "RefreshSqlEndpoint1",
+        "dependsOn": [
+          {
+            "activity": "Notebook-IQ2",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "POST",
+          "groupId": "403ac573-7599-48cb-ac00-cddcaad06fa9",
+          "datasetId": "4ef38cd8-a234-42be-9199-d70ff645c3f2",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "feature_store_trade_ml_csv_pipeline"
+            },
+            {
+              "table": "trade_scores_from_csv_landing"
+            },
+            {
+              "table": "feature_trade_base"
+            },
+            {
+              "table": "feature_client_hop1"
+            },
+            {
+              "table": "feature_client_hop3"
+            },
+            {
+              "table": "feature_event_proximity"
+            },
+            {
+              "table": "feature_store_trade_ml"
+            },
+            {
+              "table": "trade_scores_from_feature_store"
+            },
+            {
+              "table": "iq_agent_input"
+            },
+            {
+              "table": "iq_trades"
+            },
+            {
+              "table": "iq_events"
+            },
+            {
+              "table": "iq_clients"
+            },
+            {
+              "table": "iq_instruments"
+            },
+            {
+              "table": "relationships_raw"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "59f31842-b92c-470c-89f2-9f8ce7a8043b"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Semantic model refresh",
+        "dependsOn": [
+          {
+            "activity": "RefreshSqlEndpoint1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

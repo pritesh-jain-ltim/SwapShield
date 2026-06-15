@@ -1,0 +1,80 @@
+table feature_client_hop1
+	lineageTag: 959a926c-cd6d-47a3-88bd-fad89c74151f
+	sourceLineageTag: [dbo].[feature_client_hop1]
+
+	measure 'Avg Risk' = AVERAGE(iq_trades[anomaly_score])
+		lineageTag: 94150997-4379-42ec-8d9e-f7bc6690d48a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cluster Flag' = ```
+			
+			     IF(
+			         [Total Exposure] > 500000000 &&
+			         MIN(iq_trades[days_to_next_event]) <= 2,
+			         "Suspicious Cluster",
+			         "Normal"
+			     )
+			```
+		lineageTag: 82326103-63be-4d34-b5a0-3f4cd05cc609
+
+		changedProperty = Name
+
+	column client_id
+		dataType: string
+		lineageTag: fd140a3f-f3e9-4bdf-9cc5-c0ca81820b2e
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column out_degree
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fb6ca8f-7047-4de7-afae-120c23d55396
+		sourceLineageTag: out_degree
+		summarizeBy: sum
+		sourceColumn: out_degree
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_degree
+		dataType: int64
+		formatString: 0
+		lineageTag: 1764cc69-ad5f-430b-86f8-c50a53b33998
+		sourceLineageTag: in_degree
+		summarizeBy: sum
+		sourceColumn: in_degree
+
+		annotation SummarizationSetBy = Automatic
+
+	column distinct_neighbors_1hop
+		dataType: int64
+		formatString: 0
+		lineageTag: 7471c80f-08f1-4937-a9bf-585cd074ee66
+		sourceLineageTag: distinct_neighbors_1hop
+		summarizeBy: sum
+		sourceColumn: distinct_neighbors_1hop
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_1hop_link
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bb648db-312c-4a7d-ab89-c68f795f4002
+		sourceLineageTag: has_1hop_link
+		summarizeBy: sum
+		sourceColumn: has_1hop_link
+
+		annotation SummarizationSetBy = Automatic
+
+	partition feature_client_hop1 = entity
+		mode: directLake
+		source
+			entityName: feature_client_hop1
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

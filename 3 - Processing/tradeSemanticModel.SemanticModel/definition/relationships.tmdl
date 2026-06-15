@@ -1,0 +1,9 @@
+relationship 37772d1d-c222-f934-f3b0-bc6def9c9164
+	fromColumn: iq_trades.client_id
+	toColumn: relationships_raw.from_client
+
+relationship a96afad2-708e-bce0-44e0-acd77278a4f2
+	isActive: false
+	fromColumn: iq_trades.client_id
+	toColumn: relationships_raw.to_client
+

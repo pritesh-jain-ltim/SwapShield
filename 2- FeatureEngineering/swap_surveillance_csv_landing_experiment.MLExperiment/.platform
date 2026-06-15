@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLExperiment",
+    "displayName": "swap_surveillance_csv_landing_experiment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "94afb180-e3cc-a83f-4dfc-c0f010c573a4"
+  }
+}

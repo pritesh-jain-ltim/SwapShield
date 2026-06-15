@@ -1,0 +1,366 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphInstance/definition/graphType/1.0.0/schema.json",
+  "nodeTypes": [
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "3cca1c71-5833-4225-a6e5-88701668b87a",
+      "labels": [
+        "TRADE"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "anomalyScore",
+          "type": "INT"
+        },
+        {
+          "name": "clientId",
+          "type": "STRING"
+        },
+        {
+          "name": "daysToNextEvent",
+          "type": "INT"
+        },
+        {
+          "name": "direction",
+          "type": "STRING"
+        },
+        {
+          "name": "eventWithin3d",
+          "type": "INT"
+        },
+        {
+          "name": "eventWithin7d",
+          "type": "INT"
+        },
+        {
+          "name": "isInsider",
+          "type": "INT"
+        },
+        {
+          "name": "jurisdictionRisk",
+          "type": "STRING"
+        },
+        {
+          "name": "jurisdictionRiskScore",
+          "type": "INT"
+        },
+        {
+          "name": "kycRiskScore",
+          "type": "INT"
+        },
+        {
+          "name": "largeTradeFlag",
+          "type": "INT"
+        },
+        {
+          "name": "newExposureFlag",
+          "type": "INT"
+        },
+        {
+          "name": "notional",
+          "type": "FLOAT"
+        },
+        {
+          "name": "notionalGe1bn",
+          "type": "INT"
+        },
+        {
+          "name": "notionalGe500m",
+          "type": "INT"
+        },
+        {
+          "name": "notionalVsAvg",
+          "type": "FLOAT"
+        },
+        {
+          "name": "notional1",
+          "type": "FLOAT"
+        },
+        {
+          "name": "riskRating",
+          "type": "STRING"
+        },
+        {
+          "name": "rollingFrequency",
+          "type": "INT"
+        },
+        {
+          "name": "tradeDate",
+          "type": "ZONED DATETIME"
+        },
+        {
+          "name": "underlying",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "eee5c565-6ef7-475d-aeaa-b3e47f765753",
+      "labels": [
+        "CLIENT"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "connectedClient",
+          "type": "STRING"
+        },
+        {
+          "name": "relationship",
+          "type": "STRING"
+        },
+        {
+          "name": "tradeId",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "3f9750af-d454-4acc-8237-fac60c8d5488",
+      "labels": [
+        "INSTRUMENT"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "instrumentId",
+          "type": "STRING"
+        },
+        {
+          "name": "isin",
+          "type": "STRING"
+        },
+        {
+          "name": "sector",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "eventId"
+      ],
+      "alias": "602076b0-0f30-466b-a594-bfd8d22bbc07",
+      "labels": [
+        "EVENT"
+      ],
+      "properties": [
+        {
+          "name": "eventId",
+          "type": "STRING"
+        },
+        {
+          "name": "eventDate",
+          "type": "ZONED DATETIME"
+        },
+        {
+          "name": "eventType",
+          "type": "STRING"
+        },
+        {
+          "name": "importance",
+          "type": "STRING"
+        },
+        {
+          "name": "underlying",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edgeTypes": [
+    {
+      "sourceNodeType": {
+        "alias": "eee5c565-6ef7-475d-aeaa-b3e47f765753"
+      },
+      "alias": "8fbee65d-62dc-47fe-9901-4f3f3c5f52f0",
+      "destinationNodeType": {
+        "alias": "eee5c565-6ef7-475d-aeaa-b3e47f765753"
+      },
+      "labels": [
+        "CONNECTED_TO"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "connectedClient",
+          "type": "STRING"
+        },
+        {
+          "name": "relationship",
+          "type": "STRING"
+        },
+        {
+          "name": "tradeId",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "sourceNodeType": {
+        "alias": "eee5c565-6ef7-475d-aeaa-b3e47f765753"
+      },
+      "alias": "35bab525-f68e-4eac-a88f-42ff4dbb176d",
+      "destinationNodeType": {
+        "alias": "3cca1c71-5833-4225-a6e5-88701668b87a"
+      },
+      "labels": [
+        "EXECUTES"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "connectedClient",
+          "type": "STRING"
+        },
+        {
+          "name": "relationship",
+          "type": "STRING"
+        },
+        {
+          "name": "tradeId",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "sourceNodeType": {
+        "alias": "3cca1c71-5833-4225-a6e5-88701668b87a"
+      },
+      "alias": "27b82625-237a-483b-b6bc-66a3843bf2d0",
+      "destinationNodeType": {
+        "alias": "3f9750af-d454-4acc-8237-fac60c8d5488"
+      },
+      "labels": [
+        "REFERENCES"
+      ],
+      "properties": [
+        {
+          "name": "anomalyScore",
+          "type": "INT"
+        },
+        {
+          "name": "clientId",
+          "type": "STRING"
+        },
+        {
+          "name": "daysToNextEvent",
+          "type": "INT"
+        },
+        {
+          "name": "direction",
+          "type": "STRING"
+        },
+        {
+          "name": "eventWithin3d",
+          "type": "INT"
+        },
+        {
+          "name": "eventWithin7d",
+          "type": "INT"
+        },
+        {
+          "name": "isInsider",
+          "type": "INT"
+        },
+        {
+          "name": "jurisdictionRisk",
+          "type": "STRING"
+        },
+        {
+          "name": "jurisdictionRiskScore",
+          "type": "INT"
+        },
+        {
+          "name": "kycRiskScore",
+          "type": "INT"
+        },
+        {
+          "name": "largeTradeFlag",
+          "type": "INT"
+        },
+        {
+          "name": "newExposureFlag",
+          "type": "INT"
+        },
+        {
+          "name": "notional",
+          "type": "FLOAT"
+        },
+        {
+          "name": "notionalGe1bn",
+          "type": "INT"
+        },
+        {
+          "name": "notionalGe500m",
+          "type": "INT"
+        },
+        {
+          "name": "notionalVsAvg",
+          "type": "FLOAT"
+        },
+        {
+          "name": "notional1",
+          "type": "FLOAT"
+        },
+        {
+          "name": "riskRating",
+          "type": "STRING"
+        },
+        {
+          "name": "rollingFrequency",
+          "type": "INT"
+        },
+        {
+          "name": "tradeDate",
+          "type": "ZONED DATETIME"
+        },
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "underlying",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "sourceNodeType": {
+        "alias": "3f9750af-d454-4acc-8237-fac60c8d5488"
+      },
+      "alias": "5d6be742-df01-4194-ac5c-ef42a7479f8f",
+      "destinationNodeType": {
+        "alias": "602076b0-0f30-466b-a594-bfd8d22bbc07"
+      },
+      "labels": [
+        "HAS_EVENT"
+      ],
+      "properties": []
+    }
+  ]
+}

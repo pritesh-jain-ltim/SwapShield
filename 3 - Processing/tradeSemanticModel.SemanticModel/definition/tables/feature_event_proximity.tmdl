@@ -1,0 +1,70 @@
+table feature_event_proximity
+	lineageTag: 6d9204e6-380a-4b8a-a7e3-a023af198276
+	sourceLineageTag: [dbo].[feature_event_proximity]
+
+	column trade_id
+		dataType: string
+		lineageTag: f1fd8e25-156c-4b49-bc41-14831bb77ee3
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_next_event
+		dataType: int64
+		formatString: 0
+		lineageTag: ab81a9a7-d714-4c14-b142-6e2a0ddb3031
+		sourceLineageTag: days_to_next_event
+		summarizeBy: sum
+		sourceColumn: days_to_next_event
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_7d
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d573aae-44bb-4a37-aa0d-c714a750eda4
+		sourceLineageTag: event_within_7d
+		summarizeBy: sum
+		sourceColumn: event_within_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_within_3d
+		dataType: int64
+		formatString: 0
+		lineageTag: f32b5b7f-f92c-4fb3-a5df-1392dd860901
+		sourceLineageTag: event_within_3d
+		summarizeBy: sum
+		sourceColumn: event_within_3d
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_high_importance_event
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ed9f4a7-956c-433a-ae7b-bd99dfa81471
+		sourceLineageTag: has_high_importance_event
+		summarizeBy: sum
+		sourceColumn: has_high_importance_event
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_earnings_event
+		dataType: int64
+		formatString: 0
+		lineageTag: e6d689ff-081d-40eb-9b6c-7defabcdff41
+		sourceLineageTag: has_earnings_event
+		summarizeBy: sum
+		sourceColumn: has_earnings_event
+
+		annotation SummarizationSetBy = Automatic
+
+	partition feature_event_proximity = entity
+		mode: directLake
+		source
+			entityName: feature_event_proximity
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+

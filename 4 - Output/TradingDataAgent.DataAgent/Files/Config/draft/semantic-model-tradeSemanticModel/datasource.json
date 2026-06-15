@@ -1,0 +1,1913 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "f645c3f2-d70f-9199-42be-a2344ef38cd8",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "tradeSemanticModel",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {
+    "csdl_relationships": "[{\"FromTable\":\"iq_trades\",\"FromColumn\":\"client_id\",\"ToTable\":\"relationships_raw\",\"ToColumn\":\"from_client\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"iq_trades\",\"FromColumn\":\"client_id\",\"ToTable\":\"relationships_raw\",\"ToColumn\":\"to_client\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
+  },
+  "elements": [
+    {
+      "id": "959a926c-cd6d-47a3-88bd-fad89c74151f",
+      "is_selected": false,
+      "display_name": "feature_client_hop1",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "fd140a3f-f3e9-4bdf-9cc5-c0ca81820b2e",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6fb6ca8f-7047-4de7-afae-120c23d55396",
+          "is_selected": true,
+          "display_name": "out_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1764cc69-ad5f-430b-86f8-c50a53b33998",
+          "is_selected": true,
+          "display_name": "in_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7471c80f-08f1-4937-a9bf-585cd074ee66",
+          "is_selected": true,
+          "display_name": "distinct_neighbors_1hop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3bb648db-312c-4a7d-ab89-c68f795f4002",
+          "is_selected": true,
+          "display_name": "has_1hop_link",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "94150997-4379-42ec-8d9e-f7bc6690d48a",
+          "is_selected": true,
+          "display_name": "Avg Risk",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "82326103-63be-4d34-b5a0-3f4cd05cc609",
+          "is_selected": true,
+          "display_name": "Cluster Flag",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "efa1f268-cb4a-47a4-b92a-5e0bb64dd018",
+      "is_selected": false,
+      "display_name": "feature_client_hop3",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0c588688-1d5e-4019-ae7a-16022fcf8512",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "71ea50f1-a025-4b42-b735-e71fdfa183cf",
+          "is_selected": true,
+          "display_name": "hop3_path_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "24eaa049-7ec7-4cab-936f-e967105b1d35",
+          "is_selected": true,
+          "display_name": "three_hop_loop_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "340930d6-094e-4c93-9849-999be503eebf",
+          "is_selected": true,
+          "display_name": "in_three_hop_loop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6d9204e6-380a-4b8a-a7e3-a023af198276",
+      "is_selected": false,
+      "display_name": "feature_event_proximity",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "f1fd8e25-156c-4b49-bc41-14831bb77ee3",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ab81a9a7-d714-4c14-b142-6e2a0ddb3031",
+          "is_selected": true,
+          "display_name": "days_to_next_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0d573aae-44bb-4a37-aa0d-c714a750eda4",
+          "is_selected": true,
+          "display_name": "event_within_7d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f32b5b7f-f92c-4fb3-a5df-1392dd860901",
+          "is_selected": true,
+          "display_name": "event_within_3d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3ed9f4a7-956c-433a-ae7b-bd99dfa81471",
+          "is_selected": true,
+          "display_name": "has_high_importance_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e6d689ff-081d-40eb-9b6c-7defabcdff41",
+          "is_selected": true,
+          "display_name": "has_earnings_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2a6b1775-8682-4ed7-90c3-bd39e9557cdb",
+      "is_selected": false,
+      "display_name": "feature_store_trade_ml",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "011a0a34-393f-43e4-af49-225404f15b6c",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ff618d0a-e985-4b3c-bc17-9584cdc9ec05",
+          "is_selected": true,
+          "display_name": "trade_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b770721-0024-482a-bed3-be168415d826",
+          "is_selected": true,
+          "display_name": "booking_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d4050028-6215-4aad-81f6-46db40f7f83b",
+          "is_selected": true,
+          "display_name": "trade_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cc1ed582-af0b-4182-a560-d75d732e747c",
+          "is_selected": true,
+          "display_name": "product_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bdd1b425-dcc8-426f-905c-a17b1b989ec3",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49aa45bf-7efc-4aed-af45-2297581c1716",
+          "is_selected": true,
+          "display_name": "isin",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e09041e-7eff-451b-b8fc-e4d3899c3e16",
+          "is_selected": true,
+          "display_name": "currency",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c0e0cbf-b9b0-4a6a-920e-fcd30fb6762b",
+          "is_selected": true,
+          "display_name": "notional",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "840f4624-5bcb-4331-ba2e-f0b6f0c6c0e9",
+          "is_selected": true,
+          "display_name": "notional1",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d7cf14f-6851-4bed-8b4b-d0dacf411ec1",
+          "is_selected": true,
+          "display_name": "quantity",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7c7b1c85-d6ff-44a9-9ed6-34567c0c3bba",
+          "is_selected": true,
+          "display_name": "price",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bffe7dbd-9ad3-4fc4-b38f-11311554216e",
+          "is_selected": true,
+          "display_name": "direction",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9d554f93-3222-43c2-a17a-e7c41ebeb4a3",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3f19668a-a4d0-4e74-9802-cfce7172affa",
+          "is_selected": true,
+          "display_name": "client_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "00e7e2e8-8907-4baa-a812-f07f6ffe7efb",
+          "is_selected": true,
+          "display_name": "trader_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1675b8a1-648c-4207-ae87-217040bfb933",
+          "is_selected": true,
+          "display_name": "desk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0674f6ad-fdb9-42b8-b052-20000f75012b",
+          "is_selected": true,
+          "display_name": "legal_entity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45f27df7-7446-4a4a-aee8-1336e6526ede",
+          "is_selected": true,
+          "display_name": "portfolio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3dc2b48c-69f8-4b10-95b1-1556e8c5074f",
+          "is_selected": true,
+          "display_name": "dividend_rate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14e2935f-9bfb-41c7-8104-212f881e5d3c",
+          "is_selected": true,
+          "display_name": "financing_spread",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8c7bc04a-1a11-482d-991e-aed3408e6544",
+          "is_selected": true,
+          "display_name": "maturity_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f53ef843-84e0-4fd0-bd25-2cc2e47d9c06",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fabf2e7d-e4ea-4d64-951f-d0b496c8e198",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "098302f2-9925-4a55-8e2c-7e1ad8d3383b",
+          "is_selected": true,
+          "display_name": "country",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fafe570e-c914-47fa-ba2e-e2f5aeafd92c",
+          "is_selected": true,
+          "display_name": "risk_rating",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "399cc584-eb43-4787-be16-9b84202c28da",
+          "is_selected": true,
+          "display_name": "instrument_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "392e8e33-d029-48a5-ac66-d6ccca8ed1af",
+          "is_selected": true,
+          "display_name": "sector",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b76d5f87-e1fc-4050-bb6e-be2f80b3af79",
+          "is_selected": true,
+          "display_name": "out_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c9139790-69f5-4a0a-9aac-a198e079fda2",
+          "is_selected": true,
+          "display_name": "in_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ebd429d6-3dec-4253-848a-742170d04f94",
+          "is_selected": true,
+          "display_name": "distinct_neighbors_1hop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7ed3114-b2ab-4f11-a3ab-dc2a737cf22a",
+          "is_selected": true,
+          "display_name": "has_1hop_link",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d292f1fa-eb3c-49b7-888f-bbd2805a980f",
+          "is_selected": true,
+          "display_name": "hop3_path_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ae4a2c21-d650-4400-833f-d0c4c9587f0c",
+          "is_selected": true,
+          "display_name": "three_hop_loop_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a9534bcd-299b-4f13-9501-2869aa64df66",
+          "is_selected": true,
+          "display_name": "in_three_hop_loop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "27f69c9d-9a5f-42df-95c5-1177edfdb628",
+          "is_selected": true,
+          "display_name": "days_to_next_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a29c42f0-7080-4091-9a3e-a76d358a2eda",
+          "is_selected": true,
+          "display_name": "event_within_7d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "160b9f54-5c50-4bd4-ae8c-9fc07eb1f1e5",
+          "is_selected": true,
+          "display_name": "event_within_3d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1dde12b2-30f4-4d17-a2a7-1f6335ffc90f",
+          "is_selected": true,
+          "display_name": "has_high_importance_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2f9bbd66-15f9-4b12-81f3-c74644cafc6c",
+          "is_selected": true,
+          "display_name": "has_earnings_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b2a21b90-4029-4e65-9324-fb21e72b7773",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5f894621-cd2b-4849-8f7d-197f96680eb8",
+          "is_selected": true,
+          "display_name": "kyc_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea6c52fc-b9f5-4066-8bcf-f20f772974d6",
+          "is_selected": true,
+          "display_name": "notional_ge_1bn",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81c4c45a-e703-4a6c-867a-689ab915a985",
+          "is_selected": true,
+          "display_name": "notional_ge_500m",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a65c93fc-a165-4b10-87ee-a65e6fab5ec2",
+          "is_selected": true,
+          "display_name": "label_insider",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "73200bc4-31f0-445f-86c8-15805714246b",
+      "is_selected": false,
+      "display_name": "feature_store_trade_ml_csv_pipeline",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "1bbc9bee-3b85-4f7e-88aa-03ab10ec838d",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "44f6914a-8cd7-46ac-939f-0a1d141b9d28",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1bcb45c7-8923-433a-a3b3-6ec0d563965e",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f79b1f0f-41b4-4f49-acf7-611c4edb069c",
+          "is_selected": true,
+          "display_name": "isin",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9f5159e5-6be7-4b1c-b523-62d09c5e7d1d",
+          "is_selected": true,
+          "display_name": "trade_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "56e454d9-0ebf-44ed-9e3f-a7c27c1c1828",
+          "is_selected": true,
+          "display_name": "booking_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1c65c422-6484-4e9c-b59c-5b395c03a3df",
+          "is_selected": true,
+          "display_name": "trade_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "266061d3-96d0-4b13-9af8-f7fc4d27db83",
+          "is_selected": true,
+          "display_name": "product_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "43656c6f-a315-429a-bf51-f8434a6cdee9",
+          "is_selected": true,
+          "display_name": "currency",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4a1e2431-63c3-457b-bea0-ccd4d29046d1",
+          "is_selected": true,
+          "display_name": "notional",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b6d35dec-352c-44e4-8d4e-4f7cd93920dc",
+          "is_selected": true,
+          "display_name": "quantity",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d40e76c-8957-47e2-b841-f626d5c4674f",
+          "is_selected": true,
+          "display_name": "price",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9636f90c-b06b-4f3c-8ca2-7429e87be625",
+          "is_selected": true,
+          "display_name": "direction",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c3a0e771-723a-4426-9c76-b42d51c65e5b",
+          "is_selected": true,
+          "display_name": "client_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cfe069e8-4572-42b7-aade-fa488b35a95d",
+          "is_selected": true,
+          "display_name": "trader_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "909a11f0-7472-49cb-9f34-ee01e6164acd",
+          "is_selected": true,
+          "display_name": "desk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f2ae6a7-ad9d-4eb5-9cfc-94038ec4e0be",
+          "is_selected": true,
+          "display_name": "legal_entity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcdd7ecb-1ee7-4bde-b948-bc4b5a6c02ad",
+          "is_selected": true,
+          "display_name": "portfolio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66740fb1-f515-4328-92e4-71da2fb62583",
+          "is_selected": true,
+          "display_name": "dividend_rate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2550382f-cb65-428c-8cb0-bbfef38ecbc1",
+          "is_selected": true,
+          "display_name": "financing_spread",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b1810f37-bdca-40cb-abd9-b9e918182e2d",
+          "is_selected": true,
+          "display_name": "maturity_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0349c390-6c72-4b57-96b7-b902a86a84d4",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3e73b80e-a502-4eab-8329-8a72d9947b31",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e52195bf-9259-452c-99e1-87e2c3c75db5",
+          "is_selected": true,
+          "display_name": "country",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "94fc9e8a-06f5-4583-93d0-a3992f72df77",
+          "is_selected": true,
+          "display_name": "risk_rating",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fabcb538-7f51-4505-8856-0aa58efe5341",
+          "is_selected": true,
+          "display_name": "instrument_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "56a714df-c019-49de-9fbb-2fc3ff3c96c9",
+          "is_selected": true,
+          "display_name": "sector",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "82b90f86-91fa-447b-92e6-171e42c82801",
+          "is_selected": true,
+          "display_name": "out_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "15b93395-7562-49d8-9fae-9fd1bea492ca",
+          "is_selected": true,
+          "display_name": "in_degree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "916db6cc-4315-4dd2-82e2-5b1ce476d9da",
+          "is_selected": true,
+          "display_name": "distinct_neighbors_1hop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "adf84b41-8688-4067-bde2-06de16f5ded4",
+          "is_selected": true,
+          "display_name": "has_1hop_link",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e3bcdfb3-f63d-4ab8-8ab0-a47d70797020",
+          "is_selected": true,
+          "display_name": "hop3_path_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9a44ec01-9222-48ae-a877-ad95644e33bb",
+          "is_selected": true,
+          "display_name": "three_hop_loop_count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85627cdd-7881-4f2d-b366-316159be0915",
+          "is_selected": true,
+          "display_name": "in_three_hop_loop",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ce5d5c6d-148e-4e6e-98b0-1de859cf6e55",
+          "is_selected": true,
+          "display_name": "days_to_next_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d746c1d7-85fe-4547-ad89-96bb7a3a00a5",
+          "is_selected": true,
+          "display_name": "event_within_7d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c4f94f8c-3884-47a1-8978-f0c19e10e8f9",
+          "is_selected": true,
+          "display_name": "event_within_3d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f28800cd-5d76-43dc-9021-8f3a47806b6f",
+          "is_selected": true,
+          "display_name": "has_high_importance_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "be0dda8c-ee62-4054-9393-fc00847e9121",
+          "is_selected": true,
+          "display_name": "has_earnings_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e0c8f70-bdbc-4717-ba50-1f55f8726403",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a1aa6a8-9478-4f61-b371-17ed49d16563",
+          "is_selected": true,
+          "display_name": "kyc_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "797e3885-160e-4237-ba97-bde9170af45c",
+          "is_selected": true,
+          "display_name": "notional_ge_1bn",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "007ee03b-bb43-480e-94cf-16557ff96ccd",
+          "is_selected": true,
+          "display_name": "notional_ge_500m",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d00ff51f-67b8-4ee9-b7b4-34b6c9f9f5e4",
+          "is_selected": true,
+          "display_name": "label_insider",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "9c67b3ce-a43e-4b5e-8f1c-b3c13e830c82",
+      "is_selected": false,
+      "display_name": "feature_trade_base",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b9864183-bb41-4e32-b31f-51ebdaa402e7",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e4dce4b9-ea0a-4a8c-aabc-aaaaf8ad6b46",
+          "is_selected": true,
+          "display_name": "trade_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9d7aa91e-27c5-44d6-a561-9c5c5fedda61",
+          "is_selected": true,
+          "display_name": "booking_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6aeeeb25-9b55-4301-8eb4-a9fb19787a18",
+          "is_selected": true,
+          "display_name": "trade_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "54b35be3-d23f-41fc-ba6a-e953c06c0707",
+          "is_selected": true,
+          "display_name": "product_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88b4d469-512f-4442-b83f-817d8dfedeaf",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9995df9b-56c8-4cef-bb02-810d95539fa5",
+          "is_selected": true,
+          "display_name": "isin",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8f41bb3a-1c20-4d96-adcc-b231f1f52ab0",
+          "is_selected": true,
+          "display_name": "currency",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f9fd6737-2ccb-4720-bd61-bf7bb55a51d6",
+          "is_selected": true,
+          "display_name": "notional",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "617cec47-9ebf-44f4-9176-a0c2ee2b20d7",
+          "is_selected": true,
+          "display_name": "notional1",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d71911fc-c664-42ef-afed-7b75095329d8",
+          "is_selected": true,
+          "display_name": "quantity",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81e9ff78-4cdc-4604-8ebf-30b0d12a8760",
+          "is_selected": true,
+          "display_name": "price",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c943489f-ad36-4fd2-8251-4e99a0edd56c",
+          "is_selected": true,
+          "display_name": "direction",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7115189-3009-417b-a2aa-9e71776bd281",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8a5aa459-22b1-457a-af7c-5dd01a4540a3",
+          "is_selected": true,
+          "display_name": "client_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "774eeebd-bb2d-4fb2-89c1-894604e1312e",
+          "is_selected": true,
+          "display_name": "trader_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b12a8d8d-343e-413e-8db7-de5a19879744",
+          "is_selected": true,
+          "display_name": "desk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88a304ac-c3b6-403f-af7b-25711d86dfb3",
+          "is_selected": true,
+          "display_name": "legal_entity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25f05466-364a-42ff-8bc9-24503b75c765",
+          "is_selected": true,
+          "display_name": "portfolio",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cfc17ba1-d8f4-47cd-8c68-9444a333270f",
+          "is_selected": true,
+          "display_name": "dividend_rate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ee21fe5-08c2-4c7b-a7b3-cd8077111261",
+          "is_selected": true,
+          "display_name": "financing_spread",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "65e65328-fd4a-4223-8b16-f16e49a9a6e1",
+          "is_selected": true,
+          "display_name": "maturity_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6322f460-e842-4423-bfe7-4c6ca2df911c",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d82212f-4584-49f5-9c32-67278e2ed5f0",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "33e7b36d-a064-44b2-aa53-0d30cbcae239",
+          "is_selected": true,
+          "display_name": "country",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c3eec60-49d2-4039-8626-f71ef2544982",
+          "is_selected": true,
+          "display_name": "risk_rating",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cbf477ac-d919-4b04-987e-bca2797376d6",
+          "is_selected": true,
+          "display_name": "instrument_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "26e1ba94-e18f-4e86-b125-dee7317c0deb",
+          "is_selected": true,
+          "display_name": "sector",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2b061c0e-0e89-4391-b570-ef8bd8f3a372",
+          "is_selected": true,
+          "display_name": "label_insider",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "b187f1a0-6049-4244-8d87-c7b5d3951539",
+      "is_selected": false,
+      "display_name": "iq_agent_input",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "82965303-815f-4dec-bed0-38a1e39d7e91",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "70f92d71-7f00-4fa4-a750-71453474cf84",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbb3adf4-62cb-4c01-b114-19be5416af3d",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51d9756e-e776-458b-b088-20125b800d5a",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "01e2e658-2142-43c3-9b91-ff9b1185cb7d",
+          "is_selected": true,
+          "display_name": "risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a8c06882-c4cb-46ea-aa49-4a242c379387",
+          "is_selected": true,
+          "display_name": "timestamp",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "56d61823-0933-4542-8799-d891a2b129d3",
+      "is_selected": true,
+      "display_name": "iq_clients",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "fe0125d4-eb3a-4aff-b23f-9ba2af64bc0a",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51eea652-acbc-429a-8410-168c7be0fc77",
+          "is_selected": true,
+          "display_name": "connected_client",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "23ec9f91-e11b-4189-8c84-9938c157cf00",
+          "is_selected": true,
+          "display_name": "relationship",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dc9d13bf-e2da-4287-941c-5a6b8533e976",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "f20894f9-fcfb-4cc3-a0b3-1ab1be933e1b",
+      "is_selected": true,
+      "display_name": "iq_events",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "44b23fc0-0478-4dfd-bcc2-043c4dbc0f07",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4291ce91-752e-40f8-910d-54d8a48eba87",
+          "is_selected": true,
+          "display_name": "event_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "03ece3e9-293b-4db7-a5ab-a580b1945095",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c067a465-a88a-441b-9224-185698bbbc71",
+          "is_selected": true,
+          "display_name": "event_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7beee02f-5fb1-41be-a61e-ca98713a1544",
+          "is_selected": true,
+          "display_name": "event_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d324e9b8-c911-4029-858f-7a08e4b92ecd",
+          "is_selected": true,
+          "display_name": "days_to_next_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3058888a-562f-44c7-b99e-ac7e8867ffe5",
+          "is_selected": true,
+          "display_name": "event_within_7d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1881d1b-606f-4d68-bfbe-3e4daf9d9adb",
+          "is_selected": true,
+          "display_name": "event_within_3d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e160116-1e56-4e89-b80b-c81f733089d3",
+          "is_selected": true,
+          "display_name": "has_high_importance_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51b3024a-8940-4bab-902d-781a23a1c929",
+          "is_selected": true,
+          "display_name": "has_earnings_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1c4307eb-c917-49a9-98c4-ff0c945fb63d",
+      "is_selected": true,
+      "display_name": "iq_instruments",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "49025375-3d19-4a8c-9ed1-29c474d0a0de",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fc37f67c-28af-4903-a307-5f4c5faae208",
+          "is_selected": true,
+          "display_name": "isin",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4ec9d1f5-290e-45ef-b1b2-13af937b8eab",
+          "is_selected": true,
+          "display_name": "sector",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9f6fe51a-5f9e-45f0-8a2d-f465c3d5531d",
+          "is_selected": true,
+          "display_name": "instrument_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "84288691-46cc-4fed-aaa1-0f1fe71235f3",
+      "is_selected": true,
+      "display_name": "iq_trades",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ebcd7205-ed31-4648-ac12-f68b04a43ca0",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1dfce023-2fa5-451e-a79f-6c7c326015e0",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bfc026c8-4fd4-4da6-aa14-a151f8ca8e7e",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "376ca39a-5fbc-4231-98da-ef10a8f68c8a",
+          "is_selected": true,
+          "display_name": "trade_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25eb505e-284d-4e66-995c-d02e58bf4159",
+          "is_selected": true,
+          "display_name": "direction",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "137c5e38-f5ce-43c4-9636-faa437dd5363",
+          "is_selected": true,
+          "display_name": "notional",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3da5c268-e522-4fa7-a961-ff10c4592835",
+          "is_selected": true,
+          "display_name": "notional_vs_avg",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a1ae07ea-5d5f-4fef-9f4f-d2d3cbd96fb5",
+          "is_selected": true,
+          "display_name": "new_exposure_flag",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "84914a46-4371-43e7-b673-7e01ca235d30",
+          "is_selected": true,
+          "display_name": "large_trade_flag",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f71a625a-c0e8-43f1-8650-40b4bfbea6d8",
+          "is_selected": true,
+          "display_name": "rolling_frequency",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "882724ae-59ee-4899-9407-8e471aa4e8c3",
+          "is_selected": true,
+          "display_name": "is_insider",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea9f5169-2c8e-4d88-96e8-4dfbf79d43d0",
+          "is_selected": true,
+          "display_name": "days_to_next_event",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "83278cd7-5dcf-4b5e-80fa-f33aac33d134",
+          "is_selected": true,
+          "display_name": "event_within_7d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "586323d8-80bb-4284-85d0-6c10e57ca740",
+          "is_selected": true,
+          "display_name": "event_within_3d",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cc6c012b-f810-44cd-a937-516ce0bb7a99",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45754cb7-981c-4998-adc3-530c68eb2cb9",
+          "is_selected": true,
+          "display_name": "jurisdiction_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d8ab4bae-437d-4ec3-bee7-c0de1f93376e",
+          "is_selected": true,
+          "display_name": "risk_rating",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a67cf373-7492-4ee0-a9c4-70d667044105",
+          "is_selected": true,
+          "display_name": "kyc_risk_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aec4da79-a67f-45db-8f33-c3f81d37eea9",
+          "is_selected": true,
+          "display_name": "notional_ge_1bn",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "60254203-6658-470c-9d3c-fa3613e92a46",
+          "is_selected": true,
+          "display_name": "notional_ge_500m",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2b273ba2-8723-409c-93c0-0579bdc96d1c",
+          "is_selected": true,
+          "display_name": "anomaly_score",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dbc487e0-7d7b-43b5-802b-9f3fa95449b2",
+          "is_selected": true,
+          "display_name": "notional1",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4576ed8b-1048-4f56-b2c2-daa853482263",
+          "is_selected": true,
+          "display_name": "Total Exposure",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "7b134bdc-d7e4-45a2-b835-8269b1ab2bca",
+      "is_selected": true,
+      "display_name": "relationships_raw",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ca1923fa-1c9d-41a9-a8a5-4492370af247",
+          "is_selected": true,
+          "display_name": "from_client",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dea886d4-741d-4ba1-83f4-adff492426a1",
+          "is_selected": true,
+          "display_name": "to_client",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c4dd9577-fe3b-4774-866d-e371bd7b020b",
+          "is_selected": true,
+          "display_name": "relationship",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "fa48c573-d27a-40b8-bab0-c31066752815",
+      "is_selected": false,
+      "display_name": "trade_scores_from_csv_landing",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0e6fd9ad-bd34-4e24-84bf-603d5e1f037d",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7df14aa1-4737-49b9-9290-c3bc6ea0a57f",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "03b85d13-992e-4e4a-bab7-944fcacf2947",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "26e842aa-ba7f-4e71-a5cb-cc68495d3703",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad5912ee-9506-40f6-b31b-4b24d158f2f0",
+          "is_selected": true,
+          "display_name": "predicted_label",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2430cc7a-5df6-4c79-ac2e-90095f49165f",
+          "is_selected": true,
+          "display_name": "predicted_probability",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "db8dc5fc-852a-4405-837a-f73164623078",
+      "is_selected": false,
+      "display_name": "trade_scores_from_feature_store",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "cacb35a0-20da-476c-af2b-ad2eb59530c2",
+          "is_selected": true,
+          "display_name": "trade_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa1814ea-8df4-4983-840e-30a9b9a836cd",
+          "is_selected": true,
+          "display_name": "client_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "afa4cca6-31d6-454b-b52f-b35d14b4184c",
+          "is_selected": true,
+          "display_name": "risk_flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7dd74be4-c4c6-4e86-8bcc-69485c5b20a9",
+          "is_selected": true,
+          "display_name": "underlying",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cdfb865f-b016-4aef-8a87-6919feb2d411",
+          "is_selected": true,
+          "display_name": "predicted_label",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "499cca84-ec65-40c1-b48c-7cc04a716a65",
+          "is_selected": true,
+          "display_name": "predicted_probability",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "324762ac-05c0-a08d-4e1b-76f50f799719",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "IQ_Ontology_graph",
+  "type": "graph",
+  "userDescription": "You are an AML surveillance copilot grounded in the IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367, trade_surveillance_ontology and IQ_Ontology_graph.\r\n\r\nFocus on:\r\n- connected client trading clusters\r\n- pre-event trading activity\r\n- same-instrument coordinated exposure\r\n- high notional concentration near market-moving events\r\n\r\nWhen answering:\r\n1. Prefer ontology entities and relationships over raw tables.\r\n2. Detect clusters where clients are linked within 3 hops.\r\n3. Highlight instruments with total exposure above 500,000,000 within 2 days of an event.\r\n4. Return:\r\n   - root client\r\n   - connected clients count\r\n   - instrument\r\n   - total exposure\r\n   - minimum days to event\r\n5. Explain the relationship chain in business language.",
+  "metadata": {},
+  "elements": [
+    {
+      "id": "3cca1c71-5833-4225-a6e5-88701668b87a",
+      "is_selected": true,
+      "display_name": "TRADE",
+      "type": "graph.nodeType",
+      "description": "TRADE",
+      "children": []
+    },
+    {
+      "id": "eee5c565-6ef7-475d-aeaa-b3e47f765753",
+      "is_selected": true,
+      "display_name": "CLIENT",
+      "type": "graph.nodeType",
+      "description": "CLIENT",
+      "children": []
+    },
+    {
+      "id": "3f9750af-d454-4acc-8237-fac60c8d5488",
+      "is_selected": true,
+      "display_name": "INSTRUMENT",
+      "type": "graph.nodeType",
+      "description": "INSTRUMENT",
+      "children": []
+    },
+    {
+      "id": "602076b0-0f30-466b-a594-bfd8d22bbc07",
+      "is_selected": true,
+      "display_name": "EVENT",
+      "type": "graph.nodeType",
+      "description": "EVENT",
+      "children": []
+    },
+    {
+      "id": "8fbee65d-62dc-47fe-9901-4f3f3c5f52f0",
+      "is_selected": true,
+      "display_name": "CONNECTED_TO",
+      "type": "graph.edgeType",
+      "description": "CONNECTED_TO",
+      "children": []
+    },
+    {
+      "id": "35bab525-f68e-4eac-a88f-42ff4dbb176d",
+      "is_selected": true,
+      "display_name": "EXECUTES",
+      "type": "graph.edgeType",
+      "description": "EXECUTES",
+      "children": []
+    },
+    {
+      "id": "27b82625-237a-483b-b6bc-66a3843bf2d0",
+      "is_selected": true,
+      "display_name": "REFERENCES",
+      "type": "graph.edgeType",
+      "description": "REFERENCES",
+      "children": []
+    },
+    {
+      "id": "5d6be742-df01-4194-ac5c-ef42a7479f8f",
+      "is_selected": true,
+      "display_name": "HAS_EVENT",
+      "type": "graph.edgeType",
+      "description": "HAS_EVENT",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+table iq_agent_input
+	lineageTag: b187f1a0-6049-4244-8d87-c7b5d3951539
+	sourceLineageTag: [dbo].[iq_agent_input]
+
+	column trade_id
+		dataType: string
+		lineageTag: 82965303-815f-4dec-bed0-38a1e39d7e91
+		sourceLineageTag: trade_id
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: 70f92d71-7f00-4fa4-a750-71453474cf84
+		sourceLineageTag: client_id
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column underlying
+		dataType: string
+		lineageTag: fbb3adf4-62cb-4c01-b114-19be5416af3d
+		sourceLineageTag: underlying
+		summarizeBy: none
+		sourceColumn: underlying
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_flag
+		dataType: string
+		lineageTag: 51d9756e-e776-458b-b088-20125b800d5a
+		sourceLineageTag: risk_flag
+		summarizeBy: none
+		sourceColumn: risk_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_score
+		dataType: double
+		lineageTag: 01e2e658-2142-43c3-9b91-ff9b1185cb7d
+		sourceLineageTag: risk_score
+		summarizeBy: sum
+		sourceColumn: risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column timestamp
+		dataType: string
+		lineageTag: a8c06882-c4cb-46ea-aa49-4a242c379387
+		sourceLineageTag: timestamp
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iq_agent_input = entity
+		mode: directLake
+		source
+			entityName: iq_agent_input
+			schemaName: dbo
+			expressionSource: 'DirectLake - IQ_Ontology_lh_26019883a4f241dda9453a5f88a6f367'
+
